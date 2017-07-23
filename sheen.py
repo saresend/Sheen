@@ -19,9 +19,6 @@ def parseFile(file_path, endDict):
     except UnicodeDecodeError as e:
         pass
 
-    if foundTodo == False:
-        print("No TODOs Found")
-
 
 def scan_directory(dirName, endDict):
    
