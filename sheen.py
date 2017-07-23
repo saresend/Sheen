@@ -7,12 +7,15 @@ def parseFile(file_path):
     f = open(file_path, 'r')
     todoReg = re.compile(r'(.*)(TODO.+)')
     count = 0
-    for line in f:
-        match = todoReg.match(line)
-        if match != None:
-            foundTodo = True
-            print('\tLine ' + str(count) + ': ' + match.group(2))
-        count += 1
+    try:
+        for line in f:
+            match = todoReg.match(line)
+            if match != None:
+                foundTodo = True
+                print('\tLine ' + str(count) + ': ' + match.group(2))
+            count += 1
+    except UnicodeDecodeError as e:
+        pass
 
     if foundTodo == False:
         print("No TODOs Found")
