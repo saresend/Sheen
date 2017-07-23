@@ -31,10 +31,10 @@ def scan_directory(dirName):
     except NotADirectoryError as e:
         parseFile(dirName)
     
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please enter file or directory name")
-        exit()
-    else: 
-        scan_directory(sys.argv[1])
-    
+
+if len(sys.argv) < 2:
+    print("Please enter file or directory name")
+    exit()
+else: 
+    scan_directory(sys.argv[1])
+
